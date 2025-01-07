@@ -1,0 +1,362 @@
+@use 'sass:math';
+
+@function adjust($n){
+    @return math.div($n, 72) * 96;
+}
+
+$text-tiny: adjust(9pt);
+$text-base: adjust(10pt);
+$text-medium: adjust(12pt);
+$text-large: adjust(14pt);
+$text-huge: adjust(52pt);
+
+$border-width: 2pt;
+
+* {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+h2, h3, h4 {
+    font-weight: 500;
+}
+h4 {
+    font-weight: 400;
+}
+
+h2 {
+    margin-bottom: 18pt;
+}
+
+h1 {
+    font-size: adjust(22pt);
+}
+
+.sub-h1 {
+    font-size: $text-large;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+i {
+    align: center;
+    width: 1.5em;
+    margin-right: 0.5em;
+}
+
+$default-line-height: adjust(13pt);
+
+
+.resume-page-1,
+.resume-page-2,
+.resume-page-3 {
+    width: 612pt;
+    height: 792pt;
+    padding: 72pt;
+    border-width: $border-width;
+    border-style: solid;
+    border-color: black;
+    position: relative;
+
+    &:before {
+        content: "";
+        z-index: -1;
+        top: 72pt;
+        bottom: 72pt;
+        left: 72pt;
+        right: 72pt;
+        position: absolute;
+        border-style: solid;
+        border-width: 0;
+        border-bottom-width: $border-width;
+        border-color: black;
+    }
+
+    &:after {
+        content: "";
+        z-index: -2;
+        position: absolute;
+        top: 72pt;
+        bottom: 72pt;
+        left: 72pt;
+        right: 72pt;
+        border-style: solid;
+        border-width: $border-width;
+        border-width: 0;
+        border-color: #ccc;
+    }
+}
+
+.subtitle {
+    font-size: $text-medium;
+    line-height: 19pt;
+    padding-left: 10pt;
+    margin-bottom: 6pt;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+@mixin aside {
+    border-style: solid;
+    border-width: $border-width;
+    border-color: black;
+    font-size: $text-base;
+    line-height: $default-line-height;
+    box-sizing: border-box;
+    padding: 50pt 32pt 30pt;
+    min-width: 290pt;
+    max-width: 290pt;
+}
+
+@mixin with-aside {
+    display: flex;
+    flex-direction: row;
+}
+//------------------------------------------------------------------------------
+#header {
+    h1 {
+        line-height: 30pt;
+        font-weight: 500;
+    }
+    .sub-h1 {
+        margin-bottom: 20pt;
+    }
+}
+
+#contact {
+    padding-bottom: 16pt;
+    margin-bottom: 32pt;
+    border-width: 0;
+    border-bottom-width: 2pt;
+    border-style: solid;
+    border-color: black;
+
+    h4 {
+        margin-bottom: 4pt;
+    }
+
+    .contact-section {
+        display: inline-block;
+        font-size: $text-medium;
+        vertical-align: top;
+        margin-right: 36pt;
+
+        ul {
+            list-style: none;
+        }
+        i {
+            margin-left: 4pt;
+        }
+    }
+}
+
+#intro {
+    @include with-aside;
+    margin-bottom: 32pt;
+
+    p {
+        padding-bottom: 18pt;
+    }
+}
+
+#at-glance {
+    flex-grow: 1;
+    #hero {
+        padding-bottom: 18pt;
+        span {
+            font-size: 52pt;
+            line-height: 62pt;
+            float: left;
+            padding-left: 12pt;
+            padding-right: 12pt;
+        }
+        p {
+            padding: 0;
+        }
+        p:not(:last-child) {
+            font-size: $text-large;
+            line-height: 14pt;
+            padding-top: 18pt;
+        }
+        p:last-child {
+            font-size: $text-medium;
+            line-height: 16pt;
+        }
+    }
+    h3 {
+        font-size: $text-medium;
+        line-height: 19pt;
+        padding-left: 37pt;
+        margin-bottom: 6pt;
+        margin-top: 14pt;
+    }
+    ul {
+        font-size: $text-medium;
+        line-height: 15pt;
+        padding-left: 44pt;
+    }
+}
+
+#hello {
+    @include aside;
+}
+
+//------------------------------------------------------------------------------
+#skills {
+    display:grid;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    ul {
+        font-size: $text-base;
+        line-height: $default-line-height;
+        padding-left: 22pt;
+        margin-bottom: 12pt;
+    }
+    li {
+        display: inline-block;
+    }
+    li:not(:last-child)::after {
+        content: ', ';
+    }
+    li:last-child::after {
+        content: '.';
+    }
+}
+
+.job-title {
+    font-size: $text-large;
+    line-height: $default-line-height;
+    padding-left: 10pt;
+}
+
+.job-role {
+    font-size: $text-base;
+    line-height: $default-line-height;
+    padding-left: 10pt;
+    padding-bottom: 3pt;
+}
+
+.job-text {
+    font-size: $text-tiny;
+    line-height: $default-line-height;
+    padding-left: 22pt;
+}
+
+.job-subtitle {
+    font-size: $text-base;
+    line-height: $default-line-height + 2pt;
+    font-weight: 400;
+    padding-left: 5pt;
+    //padding-top: 6pt;
+    padding-bottom: 4pt;
+}
+
+.job-subtext {
+    font-size: $text-tiny;
+    line-height: $default-line-height;
+}
+
+.job-item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 28pt;
+
+    h3, h4 {
+        display: inline-block;
+    }
+    h4 {
+        padding-left: 6pt;
+    }
+}
+
+.job-main {
+    flex-grow: 1;
+}
+
+.job-aside {
+    flex-grow: 0;
+    min-width: 148pt;
+    max-width: 148pt;
+    margin-left: 32pt;
+}
+
+#education {
+    h3 {
+        font-size: $text-large;
+        line-height: $default-line-height;
+        margin: 0;
+        padding-left: 22pt;
+        display: inline-block;
+    }
+    p {
+        font-size: $text-base;
+        line-height: $default-line-height;
+        margin: 0;
+        padding-left: 58pt;
+        padding-bottom: 18pt;
+    }
+}
+
+#projects {
+    @include with-aside;
+    h3 {
+        font-size: $text-large;
+        line-height: $default-line-height;
+        //padding-left: 10pt;
+        padding-left: 0;
+        margin-top: 24pt;
+        margin-bottom: 12pt;
+    }
+
+    li {
+        list-style-type: none;
+        h4 {
+            line-height: $default-line-height;
+            //padding-left: 22pt;
+            padding-left: 0;
+            margin-bottom: 4pt;
+        }
+        p {
+            font-size: $text-base;
+            line-height: $default-line-height;
+            //padding-left: 22pt;
+            padding-left: 0;
+            margin-bottom: 18pt;
+        }
+    }
+    .projects-list {
+        h3 {
+            margin-top: 0;
+        }
+    }
+
+    .projects-aside {
+        @include aside;
+        margin-right: 24pt;
+        p {
+            margin: 0;
+        }
+        >p {
+            margin-bottom: 18pt;
+        }
+    }
+
+    .projects-cta {
+        padding-top: 32pt;
+        padding-bottom: 18pt;
+        text-align: center;
+    }
+}

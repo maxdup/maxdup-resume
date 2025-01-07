@@ -1,0 +1,16 @@
+node_modules/
+build/
+coverage/
+
+*.tar.gz
+
+*~
+*#
+.#*
+
+# Meld files
+*.orig
+*.REMOTE.*
+*.BASE.*
+*.BACKUP.*
+*.LOCAL.*
