@@ -1,14 +1,10 @@
 @use 'sass:math';
 
-@function adjust($n){
-    @return math.div($n, 72) * 96;
-}
-
-$text-tiny: adjust(9pt);
-$text-base: adjust(10pt);
-$text-medium: adjust(12pt);
-$text-large: adjust(14pt);
-$text-huge: adjust(52pt);
+$text-tiny: 9pt;
+$text-base: 10pt;
+$text-medium: 12pt;
+$text-large: 14pt;
+$text-huge: 52pt;
 
 $border-width: 2pt;
 
@@ -17,6 +13,11 @@ $border-width: 2pt;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 h1, h2, h3, h4, p { margin: 0; }
@@ -28,11 +29,13 @@ h4 {
 }
 
 h2 {
-    margin-bottom: 18pt;
+    margin-bottom: 24pt;
+    font-size: 16pt;
+    font-weight: 600;
 }
 
 h1 {
-    font-size: adjust(22pt);
+    font-size: 20pt;
 }
 
 .sub-h1 {
@@ -44,14 +47,19 @@ a {
     color: black;
 }
 
-i {
+i, svg {
     align: center;
     width: 1.5em;
     margin-right: 0.5em;
 }
 
-$default-line-height: adjust(13pt);
+li::marker {
+    margin-right: 5px !important;
+}
 
+$default-line-height: 13pt;
+
+$guides: white;
 
 .resume-page-1,
 .resume-page-2,
@@ -59,9 +67,11 @@ $default-line-height: adjust(13pt);
     width: 612pt;
     height: 792pt;
     padding: 72pt;
+    box-sizing: border-box;
     border-width: $border-width;
     border-style: solid;
-    border-color: black;
+    border-width: 2px;
+    border-color: $guides;
     position: relative;
 
     &:before {
@@ -87,9 +97,10 @@ $default-line-height: adjust(13pt);
         left: 72pt;
         right: 72pt;
         border-style: solid;
-        border-width: $border-width;
-        border-width: 0;
-        border-color: #ccc;
+        border-style: solid;
+        border-width: 2px;
+        border-color: $guides;
+
     }
 }
 
@@ -113,9 +124,9 @@ ul {
     font-size: $text-base;
     line-height: $default-line-height;
     box-sizing: border-box;
-    padding: 50pt 32pt 30pt;
-    min-width: 290pt;
-    max-width: 290pt;
+    padding: 36pt 24pt 18pt;
+    min-width: 210pt;
+    max-width: 210pt;
 }
 
 @mixin with-aside {
@@ -133,6 +144,7 @@ ul {
         right: 0;
         height: 100%;
         width: auto;
+        z-index: -1;
     }
 }
 #title {
@@ -141,7 +153,7 @@ ul {
         font-weight: 500;
     }
     .sub-h1 {
-        margin-bottom: 20pt;
+        margin-bottom: 12pt;
     }
 }
 
@@ -161,12 +173,12 @@ ul {
         display: inline-block;
         font-size: $text-medium;
         vertical-align: top;
-        margin-right: 36pt;
+        margin-right: 24pt;
 
         ul {
             list-style: none;
         }
-        i {
+        i, svg {
             margin-left: 4pt;
         }
     }
@@ -174,7 +186,7 @@ ul {
 
 #intro {
     @include with-aside;
-    margin-bottom: 32pt;
+    margin-bottom: 22pt;
 
     p {
         padding-bottom: 18pt;
@@ -184,10 +196,12 @@ ul {
 #at-glance {
     flex-grow: 1;
     #hero {
-        padding-bottom: 18pt;
+        margin-left: 12pt;
+        margin-top: 0;
+        padding-bottom: 8pt;
         span {
             font-size: 52pt;
-            line-height: 62pt;
+            line-height: 52pt;
             float: left;
             padding-left: 12pt;
             padding-right: 12pt;
@@ -198,24 +212,27 @@ ul {
         p:not(:last-child) {
             font-size: $text-large;
             line-height: 14pt;
-            padding-top: 18pt;
+            padding-top: 6pt;
         }
         p:last-child {
             font-size: $text-medium;
             line-height: 16pt;
         }
     }
+    h2 {
+        margin-bottom: 8pt;
+    }
     h3 {
         font-size: $text-medium;
         line-height: 19pt;
-        padding-left: 37pt;
+        padding-left: 52pt;
         margin-bottom: 6pt;
         margin-top: 14pt;
     }
     ul {
         font-size: $text-medium;
-        line-height: 15pt;
-        padding-left: 44pt;
+        line-height: 14pt;
+        padding-left: 56pt;
     }
 }
 
@@ -225,17 +242,21 @@ ul {
 
 //------------------------------------------------------------------------------
 #skills {
-    display:grid;
-    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
-    grid-row: auto auto;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-
+    .skills-table {
+        display:grid;
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        grid-row: auto auto;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    h2 {
+        margin-bottom: 10pt;
+    }
     ul {
         font-size: $text-base;
         line-height: $default-line-height;
         padding-left: 22pt;
-        margin-bottom: 12pt;
+        margin-bottom: 0pt;
     }
     li {
         display: inline-block;
@@ -252,6 +273,7 @@ ul {
     font-size: $text-large;
     line-height: $default-line-height;
     padding-left: 10pt;
+    padding-bottom: 6pt;
 }
 
 .job-role {
@@ -262,7 +284,7 @@ ul {
 }
 
 .job-text {
-    font-size: $text-tiny;
+    font-size: $text-base;
     line-height: $default-line-height;
     padding-left: 22pt;
 }
@@ -272,19 +294,19 @@ ul {
     line-height: $default-line-height + 2pt;
     font-weight: 400;
     padding-left: 5pt;
-    //padding-top: 6pt;
-    padding-bottom: 4pt;
+    padding-top: 1pt;
+    padding-bottom: 3pt;
 }
 
 .job-subtext {
-    font-size: $text-tiny;
+    font-size: $text-base;
     line-height: $default-line-height;
 }
 
 .job-item {
     display: flex;
     flex-direction: row;
-    padding-bottom: 28pt;
+    padding-bottom: 24pt;
 
     h3, h4 {
         display: inline-block;
@@ -300,8 +322,8 @@ ul {
 
 .job-aside {
     flex-grow: 0;
-    min-width: 148pt;
-    max-width: 148pt;
+    min-width: 90pt;
+    max-width: 90pt;
     margin-left: 32pt;
 }
 
@@ -320,17 +342,20 @@ ul {
         padding-left: 58pt;
         padding-bottom: 18pt;
     }
+    ul {
+        margin-bottom: 18pt;
+    }
 }
 
 #projects {
     @include with-aside;
+
     h3 {
         font-size: $text-large;
         line-height: $default-line-height;
-        //padding-left: 10pt;
         padding-left: 0;
         margin-top: 24pt;
-        margin-bottom: 12pt;
+        margin-bottom: 18pt;
     }
 
     li {
@@ -349,15 +374,20 @@ ul {
             margin-bottom: 18pt;
         }
     }
+
     .projects-list {
         h3 {
+            margin-top: 32pt;
+        }
+        h3:first-child {
             margin-top: 0;
         }
     }
 
     .projects-aside {
         @include aside;
-        margin-right: 24pt;
+        padding-top: 48pt;
+        margin-right: 18pt;
         p {
             margin: 0;
         }
@@ -371,4 +401,15 @@ ul {
         padding-bottom: 18pt;
         text-align: center;
     }
+}
+
+//------------------------------------------------------------------------------
+.page-n {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40pt;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
 }
