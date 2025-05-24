@@ -1,3 +1,4 @@
+
 <!Doctype html>
 <html lang="en">
   <head>
@@ -7,7 +8,7 @@
 
     <!-- Metadata -->
     <meta name="description" content="Montréal based web developer" data-localize-content>
-    <meta name="keywords" content="programming, development, developer, web, website, maxdup">
+    <meta name="keywords" content="programming, development, developer, web, website, maxdup" data-localize-content>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -18,21 +19,21 @@
       <div id="header">
         <div id="title">
           <h1>Maxime Dupuis</h1>
-          <div class="sub-h1">Full-stack Web Developer</div>
+          <div class="sub-h1" data-localize-text>Full-stack Web Developer</div>
         </div>
 
         <div id="contact">
           <div class="contact-section">
-            <h4>Contact me</h4>
+            <h4 data-localize-text>Contact me</h4>
             <ul>
               <li><i class="fa fa-location-dot"></i>Montréal, Canada</li>
               <li><a href="mailto:mdupuis@hotmail.ca" target="_blank"><i class="fa fa-envelope"></i>mdupuis@hotmail.ca</a></li>
               <li><a href="tel:+1514-546-0054"><i class="fa fa-phone"></i>(514) 546-0054</a></li>
-              <li><i class="fa fa-language"></i>French, English</li>
+              <li><i class="fa fa-language"></i><span data-localize-text>French, English</span></li>
             </ul>
           </div>
           <div class="contact-section">
-            <h4>Find me online</h4>
+            <h4 data-localize-text>Find me online</h4>
             <ul>
               <li><a href="https://maxdup.dev"><i class="fa fa-globe"></i>maxdup.dev</a></li>
               <li><a href="https://github.com/maxdup"><i class="fa fa-brands fa-github"></i>github.com/maxdup</a></li>
@@ -44,38 +45,46 @@
 
       <div id="intro">
         <div id="at-glance">
-          <h2>At a Glance</h2>
+          <h2 data-localize-text>At a Glance</h2>
           <div id="hero">
             <span>10</span>
-            <p>Years of experience</p>
-            <p>working as a developer</p>
+            <p data-localize-text>Years of experience</p>
+            <p data-localize-text>working as a developer</p>
           </div>
-          <h3>Occupying roles such as</h3>
+          <h3 data-localize-text>Occupying roles such as</h3>
           <ul>
-            <li>Full-stack developer</li>
-            <li>Frontend developer</li>
-            <li>Mobile developer</li>
-            <li>Game developer</li>
+            <li data-localize-text>Full-stack developer</li>
+            <li data-localize-text>Frontend developer</li>
+            <li data-localize-text>Mobile developer</li>
+            <li data-localize-text>Game developer</li>
           </ul>
-          <h3>With companies such as</h3>
+          <h3 data-localize-text>With companies such as</h3>
           <ul>
-            <li>3dverse</li>
-            <li>Valve Corporation</li>
-            <li>Soulzone inc.</li>
+            <li data-localize-text>3dverse</li>
+            <li data-localize-text>Valve Corporation</li>
+            <li data-localize-text>Soulzone inc.</li>
           </ul>
         </div>
         <div id="hello">
-          <p>Hi, I’m Maxime, <br/>a Montréal-based web developer.</p>
-          <p>I tend to be product-oriented.<br/>To me, the end-user experience is the only measure of success.</p>
-          <p>That being said... there’s always more to it than meets the eye. That’s why I like to go deep into every facets of what makes software tick, whether it be in the frontend or backend.</p>
+          <p data-localize-text>Hi, I’m Maxime, <br/>a Montréal-based web developer.</p>
+          <p data-localize-text>I tend to be product-oriented.<br/>To me, the end-user experience is the only measure of success.</p>
+          <p data-localize-text>That being said... there’s always more to it than meets the eye. That’s why I like to go deep into every facets of what makes software tick, whether it be in the frontend or backend.</p>
+          <!--<polygon points="0.5,1.5 1,0.5 1.5,1.5" fill="white" stroke="none" />-->
+          <!--polygon points="0,1 1.5,0 1,1" fill="red" stroke="black" stroke-width="0.04" /-->
+
+          <svg viewBox="0 0 2 1.25" xmlns="http://www.w3.org/2000/svg" >
+              <polygon points="0,1 1.5,0 0.75,1 0.75,1.25 0,1.25" fill="white" stroke="none" />
+              <line x1="0" y1="1" x2="1.5" y2="0" stroke="black" stroke-width="0.05" />
+              <line x1="0.75" y1="1" x2="1.5" y2="0" stroke="black" stroke-width="0.05" />
+          </svg>
         </div>
       </div>
 
       <div id="skills">
-        <h2>Technical Skills</h2>
+        <h2 data-localize-text>Technical Skills</h2>
         <div class="skills-table">
           <div class="skills-panel">
-            <h3 class="subtitle">Programming Languages</h3>
+            <h3 class="subtitle" data-localize-text>Programming Languages</h3>
             <ul>
               <li>TypeScript</li>
               <li>JavaScript</li>
@@ -90,7 +99,7 @@
             </ul>
           </div>
           <div class="skills-panel">
-            <h3 class="subtitle">Backend Frameworks and Technologies</h3>
+            <h3 class="subtitle" data-localize-text>Backend Frameworks and Technologies</h3>
             <ul>
               <li>NodeJS</li>
               <li>Spring Boot</li>
@@ -104,7 +113,7 @@
             </ul>
           </div>
           <div class="skills-panel">
-            <h3 class="subtitle">UI Frameworks and Technologies</h3>
+            <h3 class="subtitle" data-localize-text>UI Frameworks and Technologies</h3>
             <ul>
               <li>React</li>
               <li>Angular</li>
@@ -116,7 +125,7 @@
             </ul>
           </div>
           <div class="skills-panel">
-            <h3 class="subtitle">Infrastructure and Tools</h3>
+            <h3 class="subtitle" data-localize-text>Infrastructure and Tools</h3>
             <ul>
               <li>Webpack</li>
               <li>Git</li>
@@ -129,23 +138,19 @@
           </div>
         </div>
       </div>
-      <div class="page-n">page 1 of 3</div>
+      <div class="page-n" data-localize-text>page 1 of 3</div>
     </div>
 
     <div class="resume-page-2">
-      <h2>Professional Experiences</h2>
+      <h2 data-localize-text>Professional Experiences</h2>
       <div class="job-item">
         <div class="job-main">
           <h3 class="job-title">3dverse</h3>
-          <h4 class="job-role">Fullstack developer <span class="job-year">(2024 to Present)</span></h4>
-          <div class="job-text">I contributed to the enhancement of the platform’s developer console,
-            pushing forward cutting edge 3D technologies for the web. I led the
-            development of a powerful graph editor to drive 3d engine capabilities.
-            Led the development of a government-funded innovation project, over-
-            seeing its successful execution of the key features.</div>
+          <h4 class="job-role" data-localize-text>Fullstack developer</h4><span class="job-year" data-localize-text>(2024 to Present)</span>
+          <div class="job-text" data-localize-text>Enhanced the platform’s developer console, advancing cutting-edge 3D web technologies. Led the development of a robust graph editor to extend 3D engine capabilities. Directed the development of an government-funded innovation project. Over-seeing the successful execution of its key features.</div>
         </div>
         <div class="job-aside">
-          <div class="job-subtitle">Key technologies</div>
+          <div class="job-subtitle" data-localize-text>Key technologies</div>
           <ul class="job-subtext">
             <li>NodeJS</li>
             <li>React</li>
@@ -159,11 +164,11 @@
       <div class="job-item">
         <div class="job-main">
           <h3 class="job-title">Valve Corporation</h3>
-          <h4 class="job-role">Game Developer <span class="job-year">(2015, 2022 and 2024)</span></h4>
-          <div class="job-text">As a freelance Level Designer, I had the honor of being contracted by Valve on three occasions to contribute to their content updates for the critically acclaimed game Team Fortress 2. I conceptualized, designed, and delivered original and groundbreaking game levels. My responsibilities encompassed conceptualisation, 3D art, environmental design, game balance, scripting and optimization for each project.</div>
+          <h4 class="job-role" data-localize-text>Game Developer</h4><span class="job-year" data-localize-text>(2015, 2022 and 2024)</span>
+          <div class="job-text" data-localize-text>Contracted by Valve on three separate occasions to contribute to content updates for the critically acclaimed Team Fortress 2. Designed and delivered original, high-impact game levels, with responsibilities spanning conceptualization, 3D art, environmental design, gameplay balance, scripting, and performance optimization.</div>
         </div>
         <div class="job-aside">
-          <div class="job-subtitle">Key technologies</div>
+          <div class="job-subtitle" data-localize-text>Key technologies</div>
           <ul class="job-subtext">
             <li>Source Engine</li>
             <li>Hammer Editor</li>
@@ -176,11 +181,13 @@
       <div class="job-item">
         <div class="job-main">
           <h3 class="job-title">Soulzone</h3>
-          <h4 class="job-role">Frontend developer <span class="job-year">(2016 to 2023)</span></h4>
-          <div class="job-text">I led the comprehensive frontend development of an innovative multimedia platform, prioritizing the creation of immersive and captivating user experiences. I’ve contributed to the platform’s distinctiveness and heightened visual presentation by meticulously implementing fully custom UI components as well as a completely custom CSS style, ensuring a unified and refined appearance across all aspects of the platform.</div>
+          <h4 class="job-role"data-localize-text>Frontend developer</h4><span class="job-year" data-localize-text>(2016 to 2023)</span>
+          <div class="job-text" data-localize-text>
+              Led the frontend development of a multimedia entertainment platform with a focus on rich user experiences. Elevated the platform’s distinctiveness and visual appeal by implementing a fully custom design system and meticulously crafted UI components, ensuring consistency and polish across all user-facing elements.
+          </div>
         </div>
         <div class="job-aside">
-          <div class="job-subtitle">Key technologies</div>
+          <div class="job-subtitle" data-localize-text>Key technologies</div>
           <ul class="job-subtext">
             <li>Vue</li>
             <li>Webpack</li>
@@ -194,15 +201,14 @@
       <div class="job-item">
         <div class="job-main">
           <h3 class="job-title">Agora</h3>
-          <h4 class="job-role">Tech co-founder/full-stack/mobile developer <span class="job-year">(2016 to 2017)</span></h4>
-          <div class="job-text">Being a Tech co-founder, I’ve had to architect a scalable backend system that effectively manages data flow, user authentication, and API integrations to support seamless functionality across all platforms. Additionally, I’ve had to engineer hybrid mobile applications that synchronized with the backend, ensuring consistent user experiences and optimal performance.</div>
+          <h4 class="job-role" data-localize-text>Tech co-founder/full-stack/mobile developer</h4><span class="job-year" data-localize-text>(2016 to 2017)</span>
+          <div class="job-text" data-localize-text>Designed and implemented a scalable backend infrastructure to handle data flow, user authentication, and API integrations, ensuring seamless cross-platform functionality. Also developed hybrid mobile applications tightly integrated with the backend to deliver consistent user experiences and high performance.</div>
         </div>
         <div class="job-aside">
-          <div class="job-subtitle">Key technologies</div>
+          <div class="job-subtitle" data-localize-text>Key technologies</div>
           <ul class="job-subtext">
             <li>iOS / Android</li>
             <li>Angular</li>
-            <li>Ionic / Cordova</li>
             <li>Python</li>
             <li>Flask</li>
             <li>MongoDB</li>
@@ -213,12 +219,12 @@
       <div class="job-item">
         <div class="job-main">
           <h3 class="job-title">Tenscores</h3>
-          <h4 class="job-role">Full-stack developer <span class="job-year">(2014)</span></h4>
-          <div class="job-text">During my brief tenure at Tenscores, I played a key role in enhancing the user experience for account management. Additionally, I undertook significant backend improvements that resulted in a remarkable 500-fold reduction in API usage. This, in turn, substantially lowered operational expenses associated with critical platform features.
+          <h4 class="job-role" data-localize-text>Full-stack developer</h4><span class="job-year" data-localize-text>(2014)</span>
+          <div class="job-text" data-localize-text>Contributed to user experience enhancements for account management features. Led backend optimizations that achieved a 500x reduction in API usage, significantly decreasing operational costs tied to core platform functionalities.
           </div>
         </div>
         <div class="job-aside">
-          <div class="job-subtitle">Key technologies</div>
+          <div class="job-subtitle" data-localize-text>Key technologies</div>
           <ul class="job-subtext">
             <li>AngularJS</li>
             <li>CoffeeScript</li>
@@ -228,72 +234,72 @@
           </ul>
         </div>
       </div>
-      <div class="page-n">page 2 of 3</div>
+      <div class="page-n" data-localize-text>page 2 of 3</div>
     </div>
 
     <div class="resume-page-3">
-      <h2>Education</h2>
+      <h2 data-localize-text>Education</h2>
       <div id="education">
         <ul>
           <li>
-            <h3>Software Engineering - École de technologie supérieure</h3>
-            <p>Postponed 2014 - 2015</p>
+            <h3 data-localize-text>Software Engineering - École de technologie supérieure</h3>
+            <p data-localize-text>Postponed 2014 - 2015</p>
           </li>
           <li>
-            <h3>Management Computing - Collège Montmorency</h3>
-            <p>Graduated 2014</p>
+            <h3 data-localize-text>Computer Science Technology - Collège Montmorency</h3>
+            <p data-localize-text>Graduated 2014</p>
           </li>
         </ul>
       </div>
-      <h2>Projects</h2>
+      <h2 data-localize-text>Projects</h2>
       <div id="projects">
         <div class="projects-aside">
-          <p>
+          <p data-localize-text>
             As a passionate web developer and game developer, I have been actively involved in the open-source community, with a particular focus on the Python ecosystem.
           </p>
-          <p>
+          <p data-localize-text>
             I have created multiple libraries and tools which I actively develop and maintain.
           </p>
-          <p>
+          <p data-localize-text>
             My commitment to code quality is reflected in my projects through rigorous testing, continuous integration, and comprehensive documentation.
           </p>
 
           <div class="projects-cta">
-            <p>Come see my Github profile!</p>
-            <a href="https://github.com/maxdup"><i class="fa fa-brands fa-github"></i>github.com/maxdup</a>
+            <p data-localize-text>Come see my Github profile!</p>
+            <a href="https://github.com/maxdup"><i class="fa fa-brands fa-github"></i><span>github.com/maxdup<span></a>
           </div>
         </div>
 
         <div class="projects-list">
-          <h3>Web Development</h3>
+          <h3 data-localize-text>Web Development</h3>
           <ul>
             <li>
               <h4>Flask-favicon</h4>
-              <p>A Python Flask extension that generates and serves favicon assets for diverse platforms.</p>
+              <p data-localize-text>A Python Flask extension that generates and serves favicon assets for diverse platforms.</p>
             </li>
             <li>
               <h4>Flask-cache-manifest</h4>
-              <p>A Python Flask extension for serving hashed assets via cache-busting manifests.</p>
+              <p  data-localize-text>A Python Flask extension for serving hashed assets via cache-busting manifests.</p>
             </li>
           </ul>
-          <h3>Game Development</h3>
+          <h3  data-localize-text>Game Development</h3>
           <ul>
             <li>
               <h4>pySourceSDK</h4>
-              <p>A collection of Python libraries designed to handle various game asset file types.</p>
+              <p  data-localize-text>A collection of Python libraries designed to handle various game asset file types.</p>
             </li>
             <li>
               <h4>The Orange Toolbox</h4>
-              <p>A set of debugging and automation tools tailored for the Source engine.</p>
+              <p  data-localize-text>A set of debugging and automation tools tailored for the Source engine.</p>
             </li>
             <li>
               <h4>CompilePal</h4>
-              <p>Build tools and bundler designed for Source engine level creation.</p>
+              <p  data-localize-text>Build tools and bundler designed for Source engine level creation.</p>
             </li>
           </ul>
         </div>
       </div>
-      <div class="page-n">page 3 of 3</div>
+      <div class="page-n"  data-localize-text>page 3 of 3</div>
     </div>
   </body>
 </html>

@@ -8,6 +8,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractLocStrings = require("./localization/extract-strings.js");
 
 const config = {
   mode: "development",
@@ -95,6 +96,7 @@ const config = {
     ],
   },
   plugins: [
+    new ExtractLocStrings({ locales: ["en-US", "fr-CA"] }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
@@ -102,7 +104,7 @@ const config = {
       template: path.join(dirSrc, "resume.ejs"),
       filename: "index.html",
       chunks: ["resume"],
-      baseUrl: "https://maxdup.dev",
+      baseUrl: "https://maxdup.dev/resume",
     }),
   ],
 };

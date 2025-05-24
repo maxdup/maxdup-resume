@@ -6,7 +6,8 @@ $text-medium: 12pt;
 $text-large: 14pt;
 $text-huge: 52pt;
 
-$border-width: 2pt;
+$border-width: 1.5pt;
+//$border-width: 2pt;
 
 * {
   font-family: "Outfit", serif;
@@ -145,26 +146,39 @@ ul {
         height: 100%;
         width: auto;
         z-index: -1;
+        zoom: 200%;
     }
 }
 #title {
     h1 {
-        line-height: 30pt;
+        line-height: 24pt;
         font-weight: 500;
     }
     .sub-h1 {
-        margin-bottom: 12pt;
+        margin-bottom: 16pt;
     }
 }
 
 #contact {
-    padding-bottom: 16pt;
+    padding-bottom: 24pt;
     margin-bottom: 32pt;
-    border-width: 0;
-    border-bottom-width: 2pt;
-    border-style: solid;
-    border-color: black;
+    position: relative;
 
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 65%;
+        background: black;
+        border-style: solid;
+        border-style: solid;
+        border-width: 0;
+        border-bottom-width: $border-width;
+        border-color: black;
+    }
     h4 {
         margin-bottom: 4pt;
     }
@@ -180,6 +194,7 @@ ul {
         }
         i, svg {
             margin-left: 4pt;
+            margin-right: 2pt;
         }
     }
 }
@@ -196,7 +211,7 @@ ul {
 #at-glance {
     flex-grow: 1;
     #hero {
-        margin-left: 12pt;
+        margin-left: 6pt;
         margin-top: 0;
         padding-bottom: 8pt;
         span {
@@ -204,7 +219,7 @@ ul {
             line-height: 52pt;
             float: left;
             padding-left: 12pt;
-            padding-right: 12pt;
+            padding-right: 8pt;
         }
         p {
             padding: 0;
@@ -225,19 +240,64 @@ ul {
     h3 {
         font-size: $text-medium;
         line-height: 19pt;
-        padding-left: 52pt;
+        padding-left: 42pt;
         margin-bottom: 6pt;
         margin-top: 14pt;
     }
     ul {
         font-size: $text-medium;
         line-height: 14pt;
-        padding-left: 56pt;
+        padding-left: 48pt;
     }
 }
 
 #hello {
+    position: relative;
     @include aside;
+    svg {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 50px;
+        transform: translateY(-81%);
+    }
+
+    .tail {
+        position: absolute;
+        top: -32pt;
+        height: 32pt;
+        width: 32pt;
+        background: white;
+        overflow: hidden;
+
+        /* &::before,
+           &::after {
+           content: "";
+           position: absolute;
+           width: 0;
+           height: 0;
+           border-style: solid;
+           transform: rotate(-25deg);
+           transform-origin: top left;
+           }
+
+           &::before {
+           border-width: 0 0 48px 30px;
+           border-color: black transparent transparent transparent;
+           z-index: 0;
+           bottom: 0px;
+           left: 0px;
+           }
+
+           &::after {
+           border-width: 0 0 42px 24px ;
+           border-color: white transparent transparent transparent;
+           z-index: 1;
+           bottom: 3px;
+           left: 3px;
+           }
+         */
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -276,11 +336,20 @@ ul {
     padding-bottom: 6pt;
 }
 
-.job-role {
+.job-role, .job-year {
     font-size: $text-base;
     line-height: $default-line-height;
+}
+
+.job-role {
+    font-size: $text-base;
     padding-left: 10pt;
     padding-bottom: 3pt;
+}
+
+.job-year {
+    font-size: $text-tiny;
+    padding-left: 2pt;
 }
 
 .job-text {
@@ -332,15 +401,17 @@ ul {
         font-size: $text-large;
         line-height: $default-line-height;
         margin: 0;
-        padding-left: 22pt;
         display: inline-block;
     }
     p {
         font-size: $text-base;
         line-height: $default-line-height;
         margin: 0;
-        padding-left: 58pt;
+        padding-left: 36pt;
         padding-bottom: 18pt;
+    }
+    li {
+        padding-left: 22pt;
     }
     ul {
         margin-bottom: 18pt;
@@ -355,7 +426,7 @@ ul {
         line-height: $default-line-height;
         padding-left: 0;
         margin-top: 24pt;
-        margin-bottom: 18pt;
+        margin-bottom: 16pt;
     }
 
     li {
@@ -371,7 +442,7 @@ ul {
             line-height: $default-line-height;
             //padding-left: 22pt;
             padding-left: 0;
-            margin-bottom: 18pt;
+            margin-bottom: 14pt;
         }
     }
 
@@ -386,7 +457,7 @@ ul {
 
     .projects-aside {
         @include aside;
-        padding-top: 48pt;
+        padding-top: 44pt;
         margin-right: 18pt;
         p {
             margin: 0;
@@ -400,6 +471,15 @@ ul {
         padding-top: 32pt;
         padding-bottom: 18pt;
         text-align: center;
+        a {
+            margin-top: 0.25rem;
+            display: inline-flex;
+            align-items: center;
+            svg {
+                padding-top: 3px;
+                margin-right: 0px;
+            }
+        }
     }
 }
 

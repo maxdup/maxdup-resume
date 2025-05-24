@@ -7,6 +7,7 @@ const HtmlInlineScriptPlugin = require("html-inline-script-webpack-plugin");
 const HTMLInlineCSSWebpackPlugin =
   require("html-inline-css-webpack-plugin").default;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractLocStrings = require("./localization/extract-strings.js");
 
 const config = {
   mode: "development",
@@ -93,6 +94,7 @@ const config = {
     ],
   },
   plugins: [
+    new ExtractLocStrings({ locales: ["en-US", "fr-CA"] }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
     }),
